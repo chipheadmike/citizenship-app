@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct citizenship_quizApp: App {
+struct CitizenshipApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
