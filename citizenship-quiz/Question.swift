@@ -5,8 +5,6 @@
 //  Created by Mike Williams on 3/2/25.
 //
 
-// Question.swift
-// AnsweredQuestion.swift
 import Foundation
 
 struct Question: Identifiable {

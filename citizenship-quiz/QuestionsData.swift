@@ -5,8 +5,6 @@
 //  Created by Mike Williams on 3/2/25.
 //
 
-// QuestionsData.swift
-// QuestionsData.swift
 import Foundation
 
 struct QuestionsData {

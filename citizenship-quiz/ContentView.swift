@@ -1,10 +1,16 @@
 // ContentView.swift
+//
+//  citizenship-quiz
+//
+//  Created by Mike Williams on 3/3/25.
+//
+
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var fetcher = RepFetcher()
+    @StateObject private var repFetcher = RepFetcher()
     
-    // Master copy of all 100 questions
+    // Your full set of 100 questions
     @State private var allQuestions: [Question] = QuestionsData.all
     
     @State private var showQuiz = false
@@ -22,21 +28,12 @@ struct ContentView: View {
                         .padding()
                         .keyboardType(.numberPad)
                     
-                    if fetcher.isLoading {
-                        ProgressView("Loading representatives...")
+                    if repFetcher.isLoading {
+                        ProgressView("Loading data...")
                     } else {
-                        Button("Fetch Representatives") {
-                            fetcher.fetchReps(zip: zipCode)
-                        }
-                    }
-                    
-                    // If we have reps, let the user continue
-                    if !fetcher.reps.isEmpty {
-                        Text("Found \(fetcher.reps.count) representative(s).")
-                        
-                        Button("Start Quiz") {
-                            applyRepsToQuestions()
-                            showQuiz = true
+                        // Single button to fetch reps & start quiz
+                        Button("Begin Quiz") {
+                            beginQuiz()
                         }
                         .padding()
                         .background(Color.blue.opacity(0.7))
@@ -44,7 +41,7 @@ struct ContentView: View {
                         .cornerRadius(8)
                     }
                 } else {
-                    // Present the QuizView inside a NavigationLink or directly
+                    // Present the quiz with updated questions
                     QuizView(fullQuestionPool: allQuestions)
                 }
             }
@@ -54,10 +51,21 @@ struct ContentView: View {
         }
     }
     
-    /// Dynamically replace placeholders for the user’s Senator/Representative
-    func applyRepsToQuestions() {
-        // House rep
-        if let houseRep = fetcher.reps.first(where: { $0.area == "US House" }) {
+    /// Called when user taps "Begin Quiz"
+    func beginQuiz() {
+        // Fetch House/Senate from 5 Calls, then update placeholders & show quiz
+        repFetcher.fetchReps(zip: zipCode) {
+            applyFetchedDataToQuestions()
+            showQuiz = true
+        }
+    }
+    
+    /// Replace placeholders with real data (rep, senator, governor, capital)
+    /// and randomize the "Name one U.S. territory" question.
+    func applyFetchedDataToQuestions() {
+        
+        // 1) U.S. Representative
+        if let houseRep = repFetcher.reps.first(where: { $0.area == "US House" }) {
             if let index = allQuestions.firstIndex(where: {
                 $0.text.contains("Name your U.S. Representative")
             }) {
@@ -71,8 +79,8 @@ struct ContentView: View {
             }
         }
         
-        // Senator
-        if let senator = fetcher.reps.first(where: { $0.area == "US Senate" }) {
+        // 2) U.S. Senator
+        if let senator = repFetcher.reps.first(where: { $0.area == "US Senate" }) {
             if let index = allQuestions.firstIndex(where: {
                 $0.text.contains("Who is one of your state’s U.S. Senators now?")
             }) {
@@ -84,6 +92,68 @@ struct ContentView: View {
                 )
                 allQuestions[index] = updatedQ
             }
+        }
+        
+        // 3) Governor (from your CurrentGovernors.swift)
+        if let userState = repFetcher.reps.first?.state,
+           let governor = CurrentGovernors.governors[userState] {
+            if let index = allQuestions.firstIndex(where: {
+                $0.text.contains("Who is the Governor of your state now?")
+            }) {
+                let oldQ = allQuestions[index]
+                let updatedQ = Question(
+                    text: oldQ.text,
+                    correctAnswer: governor,
+                    wrongAnswers: oldQ.wrongAnswers
+                )
+                allQuestions[index] = updatedQ
+            }
+        }
+        
+        // 4) State Capital (from StateCapitals.swift)
+        if let userState = repFetcher.reps.first?.state,
+           let correctCapital = StateCapitals.capitals[userState] {
+            if let index = allQuestions.firstIndex(where: {
+                $0.text.contains("What is the capital of your state?")
+            }) {
+                let oldQ = allQuestions[index]
+                
+                // Optionally generate random distractors
+                var allCapitals = Array(StateCapitals.capitals.values)
+                allCapitals.removeAll(where: { $0 == correctCapital })
+                allCapitals.shuffle()
+                let threeWrong = Array(allCapitals.prefix(3))
+                
+                let updatedQ = Question(
+                    text: oldQ.text,
+                    correctAnswer: correctCapital,
+                    wrongAnswers: threeWrong
+                )
+                allQuestions[index] = updatedQ
+            }
+        }
+        
+        // 5) Randomize "Name one U.S. territory" (from USATerritories.swift)
+        if let index = allQuestions.firstIndex(where: {
+            $0.text.contains("Name one U.S. territory")
+        }) {
+            let oldQ = allQuestions[index]
+            
+            // Shuffle the entire territory list
+            var territoryPool = USATerritories.all
+            territoryPool.shuffle()
+            
+            // The first is the correct territory
+            let correctTerritory = territoryPool.removeFirst()
+            // Next 3 are distractors
+            let distractors = Array(territoryPool.prefix(3))
+            
+            let updatedQ = Question(
+                text: oldQ.text,
+                correctAnswer: correctTerritory,
+                wrongAnswers: distractors
+            )
+            allQuestions[index] = updatedQ
         }
     }
 }

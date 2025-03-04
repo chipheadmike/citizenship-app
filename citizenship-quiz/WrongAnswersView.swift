@@ -5,7 +5,6 @@
 //  Created by Mike Williams on 3/2/25.
 //
 
-// WrongAnswersView.swift
 import SwiftUI
 
 struct WrongAnswersView: View {
