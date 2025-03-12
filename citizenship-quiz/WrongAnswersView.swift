@@ -10,7 +10,7 @@ import SwiftUI
 struct WrongAnswersView: View {
     let wrongAnswers: [AnsweredQuestion]
     
-    // A closure we can call to restart the quiz
+    // A callback so we can restart the quiz from here
     let onRestart: () -> Void
     
     @State private var currentIndex = 0
@@ -23,7 +23,6 @@ struct WrongAnswersView: View {
             if wrongAnswers.isEmpty {
                 Text("You got everything correct!")
             } else {
-                // Show the current wrong answer
                 let current = wrongAnswers[currentIndex]
                 
                 Text(current.questionText)
@@ -38,9 +37,8 @@ struct WrongAnswersView: View {
                 }
                 .padding()
                 
-                // Buttons
                 HStack {
-                    // Next button (only show if there's another wrong answer ahead)
+                    // If there's another missed question, show "Next"
                     if currentIndex < wrongAnswers.count - 1 {
                         Button("Next") {
                             currentIndex += 1
@@ -51,7 +49,7 @@ struct WrongAnswersView: View {
                         .cornerRadius(8)
                     }
                     
-                    // Always show a "Restart Quiz" button
+                    // A "Restart Quiz" button
                     Button("Restart Quiz") {
                         onRestart()
                     }
