@@ -132,7 +132,7 @@ struct USCISData {
         USCISQuestion(
             text: "What is freedom of religion?",
             possibleCorrectAnswers: [
-                "You can practice any religion, or not practice a religion."
+                "You can practice any religion, or not practice a religion"
             ],
             possibleWrongAnswers: [
                 "You must follow the state religion",
@@ -157,10 +157,10 @@ struct USCISData {
         USCISQuestion(
             text: "What is the “rule of law”?",
             possibleCorrectAnswers: [
-                "Everyone must follow the law.",
-                "Leaders must obey the law.",
-                "Government must obey the law.",
-                "No one is above the law."
+                "Everyone must follow the law",
+                "Leaders must obey the law",
+                "Government must obey the law",
+                "No one is above the law"
             ],
             possibleWrongAnswers: [
                 "Only citizens must obey laws",
@@ -634,10 +634,10 @@ struct USCISData {
         USCISQuestion(
             text: "There are four amendments to the Constitution about who can vote. Describe one of them.",
             possibleCorrectAnswers: [
-                "Citizens eighteen 18 and older can vote.",
-                "You don’t have to pay a poll tax to vote.",
-                "Any citizen can vote. Women and men can vote.",
-                "A male citizen of any race can vote."
+                "Citizens eighteen 18 and older can vote",
+                "You don’t have to pay a poll tax to vote",
+                "Any citizen can vote. Women and men can vote",
+                "A male citizen of any race can vote"
             ],
             possibleWrongAnswers: [
                 "Only landowners can vote",
@@ -686,12 +686,15 @@ struct USCISData {
                 "The right to bear arms"
             ],
             possibleWrongAnswers: [
-                "Right to vote, right to a job",
-                "Right to bear arms, right to education",
-                "Right to healthcare, right to housing",
-                "Right to social security, right to healthcare",
-                "Right to time off, right to a job",
-                "Right to education, right to housing"
+                "Right to vote",
+                "Right to a job",
+                "Right to education",
+                "Right to healthcare",
+                "Right to housing",
+                "Right to social security",
+                "Right to time off",
+                "Right to a beer",
+                "Right of way"
             ]
         ),
         // 52
@@ -752,10 +755,14 @@ struct USCISData {
                 "Write to a newspaper"
             ],
             possibleWrongAnswers: [
-                "Pay taxes, attend church",
-                "Serve in the military, own property",
-                "Run businesses, travel abroad",
-                "Make signs, wear patriotic jewelry"
+                "Pay taxes",
+                "Attend church",
+                "Serve in the military",
+                "Own property",
+                "Run businesses",
+                "Travel abroad",
+                "Make signs",
+                "Wear patriotic jewelry"
             ]
         ),
         // 56
@@ -774,8 +781,8 @@ struct USCISData {
         USCISQuestion(
             text: "When must all men register for the Selective Service?",
             possibleCorrectAnswers: [
-                "At age eighteen 18",
-                "Between eighteen 18 and 26"
+                "At age 18",
+                "Between ages 18 and 26"
             ],
             possibleWrongAnswers: [
                 "At age 16",
@@ -906,7 +913,7 @@ struct USCISData {
             text: "What happened at the Constitutional Convention?",
             possibleCorrectAnswers: [
                 "The Constitution was written",
-                "The Founding Fathers wrote the Constitution."
+                "The Founding Fathers wrote the Constitution"
             ],
             possibleWrongAnswers: [
                 "The Declaration was signed",
