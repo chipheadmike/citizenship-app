@@ -16,9 +16,26 @@ struct USCISData {
                 "The Constitution"
             ],
             possibleWrongAnswers: [
-                "The Bill of Rights",
-                "The Declaration of Independence",
-                "The Articles of Confederation"
+                "Declaration of Independence",
+                "Bill of Rights",
+                "Articles of Confederation",
+                "Emancipation Proclamation",
+                "Gettysburg Address",
+                "Federalist Papers",
+                "Magna Carta",
+                "Monroe Doctrine",
+                "Pledge of Allegiance",
+                "Mayflower Compact",
+                "Treaty of Paris",
+                "Common Sense",
+                "Civil Rights Act",
+                "Louisiana Purchase",
+                "Northwest Ordinance",
+                "Proclamation of Neutrality",
+                "Alien and Sedition Acts",
+                "Virginia Plan",
+                "Marshall Plan",
+                "Truman Doctrine"
             ]
         ),
         // 2
@@ -31,8 +48,25 @@ struct USCISData {
             ],
             possibleWrongAnswers: [
                 "Declares independence from Britain",
-                "Establishes trade laws",
-                "Grants citizenship to all residents"
+                "Establishes the 50 states",
+                "Explains the tax code",
+                "Describes voting procedures",
+                "Sets prices for goods",
+                "Defines marriage laws",
+                "Creates the national anthem",
+                "Lists national holidays",
+                "Establishes speed limits",
+                "Explains jury duty rules",
+                "Regulates public education",
+                "Details immigration quotas",
+                "Creates political parties",
+                "Describes military tactics",
+                "Protects endangered species",
+                "Regulates foreign trade",
+                "Establishes currency exchange rates",
+                "Sets property tax rates",
+                "Explains driver’s license rules",
+                "Defines citizenship ceremonies"
             ]
         ),
         // 3
@@ -42,9 +76,26 @@ struct USCISData {
                 "We the People"
             ],
             possibleWrongAnswers: [
-                "Life, Liberty, Pursuit",
-                "United States Constitution",
-                "In God We"
+                "We the Citizens",
+                "In the Beginning",
+                "We Declare Independence",
+                "United We Stand",
+                "America the Beautiful",
+                "By the People",
+                "We Hold Truths",
+                "Land of Liberty",
+                "We the Representatives",
+                "For Our Freedom",
+                "We Are America",
+                "Justice for All",
+                "We Establish Justice",
+                "Our Great Nation",
+                "The People Declare",
+                "We the Government",
+                "We Pledge Allegiance",
+                "Citizens of America",
+                "Our Sacred Rights",
+                "Together We Unite"
             ]
         ),
         // 4
@@ -55,9 +106,26 @@ struct USCISData {
                 "An addition to the Constitution"
             ],
             possibleWrongAnswers: [
-                "A new law passed by Congress",
-                "A state’s constitution",
-                "A presidential order"
+                "A presidential veto",
+                "A state law",
+                "A type of tax",
+                "A congressional speech",
+                "A court ruling",
+                "A treaty",
+                "A national holiday",
+                "A declaration of war",
+                "A historical document",
+                "A government department",
+                "A federal agency",
+                "A political party",
+                "A Supreme Court opinion",
+                "A military draft",
+                "A legislative bill",
+                "A diplomatic agreement",
+                "A government budget",
+                "A campaign promise",
+                "A governor’s order",
+                "A voting ballot",
             ]
         ),
         // 5
@@ -67,9 +135,26 @@ struct USCISData {
                 "The Bill of Rights"
             ],
             possibleWrongAnswers: [
-                "The Founding Principles",
+                "The Ten Commandments",
+                "The Founders' Rights",
+                "The People's Amendments",
+                "The Liberty Articles",
                 "The Federalist Papers",
-                "The Preamble Amendments"
+                "The Freedom Clauses",
+                "The Articles of Confederation",
+                "The Declaration of Rights",
+                "The Amendments of Independence",
+                "The Great Compromise",
+                "The Constitutional Compact",
+                "The Citizen's Charter",
+                "The People's Charter",
+                "The National Covenant",
+                "The Amendments of Liberty",
+                "The Freedom Amendments",
+                "The Rights of America",
+                "The Articles of Liberty",
+                "The First Principles",
+                "The National Amendments"
             ]
         ),
         // 6
@@ -83,9 +168,26 @@ struct USCISData {
                 "Petition the government"
             ],
             possibleWrongAnswers: [
-                "Voting",
-                "Privacy",
-                "Education"
+                "Right to bear arms",
+                "Freedom from taxation",
+                "Right to vote",
+                "Freedom from military service",
+                "Right to a fair trial",
+                "Freedom from searches",
+                "Right to education",
+                "Freedom from arrest",
+                "Right to healthcare",
+                "Freedom from jury duty",
+                "Right to own property",
+                "Freedom to travel abroad",
+                "Right to employment",
+                "Freedom from discrimination",
+                "Right to privacy",
+                "Freedom from prosecution",
+                "Right to citizenship",
+                "Freedom to run for office",
+                "Right to drive",
+                "Freedom from debt"
             ]
         ),
         // 7
@@ -95,9 +197,26 @@ struct USCISData {
                 "27"
             ],
             possibleWrongAnswers: [
+                "10",
+                "15",
+                "20",
+                "23",
                 "25",
                 "26",
-                "28"
+                "28",
+                "29",
+                "30",
+                "31",
+                "32",
+                "33",
+                "35",
+                "40",
+                "45",
+                "50",
+                "52",
+                "55",
+                "60",
+                "100"
             ]
         ),
         // 8
@@ -109,9 +228,26 @@ struct USCISData {
                 "Said that the United States is free from Great Britain"
             ],
             possibleWrongAnswers: [
-                "Announced our independence from Ireland",
-                "Declared our independence from Spain",
-                "Said that the United States is free from Italy"
+                "Established the Constitution",
+                "Ended the Civil War",
+                "Created the Bill of Rights",
+                "Declared war on Britain",
+                "Abolished slavery",
+                "Granted women's suffrage",
+                "Outlined voting rules",
+                "Established the Supreme Court",
+                "Set the U.S. capital in Washington D.C.",
+                "Announced westward expansion",
+                "Declared the official language",
+                "Set up public education",
+                "Created the first colonies",
+                "Authorized taxation",
+                "Formed political parties",
+                "Defined state borders",
+                "Established the U.S. military",
+                "Set immigration laws",
+                "Organized territories into states",
+                "Ratified the Constitution"
             ]
         ),
         // 9
@@ -123,9 +259,26 @@ struct USCISData {
                 "Pursuit of happiness and life"
             ],
             possibleWrongAnswers: [
-                "Property, personal wealth",
-                "Education, safety",
-                "Voting, free speech"
+                "Right to vote and freedom of speech",
+                "Freedom of religion and press",
+                "Right to bear arms and privacy",
+                "Right to education and employment",
+                "Freedom from taxation and military service",
+                "Right to healthcare and property",
+                "Freedom of travel and assembly",
+                "Right to a fair trial and voting",
+                "Right to citizenship and marriage",
+                "Freedom from slavery and discrimination",
+                "Right to housing and fair wages",
+                "Right to jury trial and legal counsel",
+                "Freedom of protest and due process",
+                "Right to drive and own land",
+                "Freedom of immigration and settlement",
+                "Right to form unions and strike",
+                "Freedom from arrest and prosecution",
+                "Right to welfare and social security",
+                "Freedom from war and conflict",
+                "Right to access technology and information"
             ]
         ),
         // 10
@@ -135,9 +288,26 @@ struct USCISData {
                 "You can practice any religion, or not practice a religion"
             ],
             possibleWrongAnswers: [
-                "You must follow the state religion",
-                "You can only practice Christianity",
-                "You are free to tax religions"
+                "The right to vote in elections",
+                "The freedom to run for office",
+                "The right to own firearms",
+                "The freedom from unreasonable searches",
+                "The right to a jury trial",
+                "The freedom to petition Congress",
+                "The right to privacy",
+                "The freedom of interstate travel",
+                "The right to protest peacefully",
+                "The freedom from taxation",
+                "The right to employment",
+                "The freedom to form labor unions",
+                "The right to education",
+                "The freedom from military service",
+                "The right to own property",
+                "The freedom from paying taxes",
+                "The right to marry",
+                "The freedom to travel abroad",
+                "The right to privacy",
+                "The freedom from discrimination"
             ]
         ),
         // 11
@@ -148,14 +318,31 @@ struct USCISData {
                 "Market economy"
             ],
             possibleWrongAnswers: [
-                "Socialist economy",
-                "Mixed feudal system",
-                "Command economy"
+                "Socialism",
+                "Communism",
+                "Feudalism",
+                "Mercantilism",
+                "Barter System",
+                "Monarchy",
+                "Oligarchy",
+                "Planned Economy",
+                "Traditional Economy",
+                "Mixed Socialism",
+                "Colonialism",
+                "Isolationism",
+                "Authoritarianism",
+                "Protectionism",
+                "Federalism",
+                "Confederalism",
+                "Nationalism",
+                "Populism",
+                "Social Democracy",
+                "Totalitarianism"
             ]
         ),
         // 12
         USCISQuestion(
-            text: "What is the “rule of law”?",
+            text: "What is the “rule of law?",
             possibleCorrectAnswers: [
                 "Everyone must follow the law",
                 "Leaders must obey the law",
@@ -163,9 +350,26 @@ struct USCISData {
                 "No one is above the law"
             ],
             possibleWrongAnswers: [
-                "Only citizens must obey laws",
-                "The president makes the laws",
-                "Laws apply only to non-citizens"
+                "Citizens choose the president",
+                "Congress passes all laws",
+                "The military controls the government",
+                "The president makes all laws",
+                "Judges are above the law",
+                "Police decide punishments",
+                "The government can break laws",
+                "States decide national laws",
+                "The wealthy make the rules",
+                "The Constitution can be ignored",
+                "Majority opinion sets the law",
+                "Religious leaders enforce laws",
+                "The president controls courts",
+                "The media makes laws",
+                "Citizens enforce laws",
+                "Only lawyers interpret laws",
+                "The governor makes federal laws",
+                "Senators enforce laws",
+                "Laws don't apply to politicians",
+                "Businesses create laws"
             ]
         ),
         // 13
@@ -180,11 +384,26 @@ struct USCISData {
                 "Judicial"
             ],
             possibleWrongAnswers: [
-                "Military",
-                "Treasury",
-                "Diplomatic",
-                "I.R.S.",
-                "E.R.S."
+                "Parliament",
+                "Federal Reserve",
+                "Central Intelligence Agency",
+                "Department of Education",
+                "Supreme Court Justice",
+                "Electoral College",
+                "Governor's Office",
+                "National Security Agency",
+                "Internal Revenue Service",
+                "Attorney General",
+                "Federal Bureau of Investigation",
+                "Speaker of the House",
+                "Senate Majority Leader",
+                "Post Office",
+                "Social Security Administration",
+                "Department of Motor Vehicles",
+                "Treasury Department",
+                "State Legislature",
+                "President's Cabinet",
+                "Library of Congress"
             ]
         ),
         // 14
@@ -195,10 +414,26 @@ struct USCISData {
                 "Separation of powers"
             ],
             possibleWrongAnswers: [
-                "Public elections",
-                "The Bill of Rights",
+                "The President's veto power",
+                "Military oversight",
+                "The electoral college",
+                "The Supreme Court's decisions",
+                "Presidential elections",
+                "Public opinion polls",
+                "Federal taxation",
                 "State governments",
-                "State Militias"
+                "The Attorney General",
+                "The Speaker of the House",
+                "Election day",
+                "The Constitution's preamble",
+                "The Bill of Rights",
+                "Congressional committees",
+                "Political parties",
+                "National security agencies",
+                "International treaties",
+                "The Vice President",
+                "Federal Reserve policy",
+                "Local elections"
             ]
         ),
         // 15
@@ -208,10 +443,29 @@ struct USCISData {
                 "The President"
             ],
             possibleWrongAnswers: [
-                "The Speaker of the House",
-                "The Chief Justice",
-                "The Senate Majority Leader",
-                "Not Trump"
+                "Not Trump",
+                "Alexandria Ocasio-Cortez",
+                "Chief Justice",
+                "Speaker of the House",
+                "Senate Majority Leader",
+                "Attorney General",
+                "Secretary of State",
+                "Vice President",
+                "Congress",
+                "Supreme Court",
+                "Governor",
+                "Secretary of Defense",
+                "Chief of Staff",
+                "U.S. Senate",
+                "House of Representatives",
+                "Treasury Secretary",
+                "FBI Director",
+                "Chairman of the Joint Chiefs",
+                "Ambassador to the UN",
+                "Director of Homeland Security",
+                "Secretary of Education",
+                "Postmaster General",
+                "il Donaldo Trumpo"
             ]
         ),
         // 16
@@ -223,11 +477,27 @@ struct USCISData {
                 "U.S. or national legislature"
             ],
             possibleWrongAnswers: [
-                "The President",
+                "il Donaldo Trumpo",
                 "The Supreme Court",
-                "The Cabinet",
+                "The President",
+                "Governors",
+                "The Vice President",
+                "Attorney General",
+                "Federal Reserve",
+                "The Electoral College",
                 "Department of Justice",
-                "il Donaldo Trumpo"
+                "The Secretary of State",
+                "The FBI",
+                "The CIA",
+                "Department of Defense",
+                "State Legislatures",
+                "The IRS",
+                "Secretary of Education",
+                "The Military",
+                "The Department of Transportation",
+                "Local Governments",
+                "The Surgeon General",
+                "The United Nations"
             ]
         ),
         // 17
@@ -237,9 +507,26 @@ struct USCISData {
                 "The Senate and House of Representatives"
             ],
             possibleWrongAnswers: [
-                "The Cabinet and Senate",
-                "The House and Supreme Court",
-                "The Executive and Legislative"
+                "Executive and Judicial",
+                "President and Supreme Court",
+                "House and Cabinet",
+                "Senate and Supreme Court",
+                "Governor and Senate",
+                "Congress and President",
+                "House and Executive",
+                "Senate and Cabinet",
+                "Judicial and House",
+                "Speaker and Senate",
+                "Governor and House",
+                "Senate and Vice President",
+                "Attorney General and House",
+                "Senate and Federal Reserve",
+                "President and Cabinet",
+                "House and Treasury",
+                "Congress and Judicial",
+                "Senate and Governors",
+                "House and Attorney General",
+                "Speaker and Chief Justice"
             ]
         ),
         // 18
@@ -249,9 +536,26 @@ struct USCISData {
                 "100"
             ],
             possibleWrongAnswers: [
-                "51",
-                "98",
-                "105"
+                "25",
+                "40",
+                "50",
+                "75",
+                "80",
+                "90",
+                "99",
+                "101",
+                "150",
+                "200",
+                "250",
+                "300",
+                "400",
+                "435",
+                "450",
+                "500",
+                "535",
+                "550",
+                "600",
+                "1000"
             ]
         ),
         // 19
@@ -261,9 +565,26 @@ struct USCISData {
                 "6"
             ],
             possibleWrongAnswers: [
+                "1",
+                "2",
+                "3",
                 "4",
                 "5",
-                "8"
+                "7",
+                "8",
+                "9",
+                "10",
+                "12",
+                "15",
+                "20",
+                "25",
+                "30",
+                "35",
+                "40",
+                "45",
+                "50",
+                "55",
+                "60"
             ]
         ),
         // 20
@@ -285,9 +606,26 @@ struct USCISData {
                 "435"
             ],
             possibleWrongAnswers: [
-                "430",
-                "440",
-                "450"
+                "50",
+                "100",
+                "200",
+                "300",
+                "350",
+                "400",
+                "450",
+                "500",
+                "535",
+                "540",
+                "600",
+                "625",
+                "650",
+                "700",
+                "750",
+                "800",
+                "850",
+                "900",
+                "950",
+                "1000"
             ]
         ),
         // 22
@@ -297,9 +635,26 @@ struct USCISData {
                 "2"
             ],
             possibleWrongAnswers: [
+                "1",
                 "3",
                 "4",
-                "6"
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "12",
+                "14",
+                "15",
+                "16",
+                "18",
+                "20",
+                "22",
+                "25",
+                "30",
+                "35",
+                "40"
             ]
         ),
         // 23
@@ -321,9 +676,26 @@ struct USCISData {
                 "All people of the state"
             ],
             possibleWrongAnswers: [
-                "Only the state’s voters",
-                "The state government",
-                "The federal government"
+                "The entire country",
+                "Only the President",
+                "The Supreme Court",
+                "The House of Representatives",
+                "The Governor",
+                "The Vice President",
+                "The Attorney General",
+                "The Speaker of the House",
+                "Their political party",
+                "The city they live in",
+                "The largest state",
+                "The smallest state",
+                "The U.S. military",
+                "The federal government",
+                "Only registered voters",
+                "Only taxpayers",
+                "The Electoral College",
+                "Federal agencies",
+                "All Americans overseas",
+                "The Cabinet"
             ]
         ),
         // 25
@@ -335,9 +707,26 @@ struct USCISData {
                 "Because some states have more people"
             ],
             possibleWrongAnswers: [
-                "Because of the state’s size",
-                "Because of the state’s wealth",
-                "Because of historical agreements"
+                "Because they have more Senators",
+                "Because they joined the union first",
+                "Because they pay more federal taxes",
+                "Because they have bigger state capitals",
+                "Because they have more universities",
+                "Because they host more federal agencies",
+                "Because they are geographically larger",
+                "Because they have older constitutions",
+                "Because they have more electoral votes",
+                "Because they have larger national parks",
+                "Because they have more historic landmarks",
+                "Because they are closer to Washington D.C.",
+                "Because they have higher voter turnout",
+                "Because they have more governors",
+                "Because they have more military bases",
+                "Because they border more states",
+                "Because they have more coastline",
+                "Because they have fewer cities",
+                "Because they have more Senators per district",
+                "Because they have special status in Congress"
             ]
         ),
         // 26
@@ -347,9 +736,26 @@ struct USCISData {
                 "4"
             ],
             possibleWrongAnswers: [
+                "1",
                 "2",
+                "3",
                 "5",
-                "6"
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "12",
+                "14",
+                "15",
+                "16",
+                "18",
+                "20",
+                "22",
+                "24",
+                "25",
+                "30",
+                "50"
             ]
         ),
         // 27
@@ -359,9 +765,17 @@ struct USCISData {
                 "November"
             ],
             possibleWrongAnswers: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
                 "October",
-                "December",
-                "September"
+                "December"
             ]
         ),
         // 28
@@ -371,10 +785,27 @@ struct USCISData {
                 "Donald J. Trump"
             ],
             possibleWrongAnswers: [
+                "il Donaldo Trumpo",
                 "Joe Biden",
+                "Barack Obama",
                 "Kamala Harris",
                 "Mike Pence",
-                "il Donaldo Trumpo"
+                "George W. Bush",
+                "Al Gore",
+                "Hillary Clinton",
+                "Mitt Romney",
+                "Bernie Sanders",
+                "John McCain",
+                "Paul Ryan",
+                "Elizabeth Warren",
+                "Nancy Pelosi",
+                "Chuck Schumer",
+                "Marco Rubio",
+                "Chris Christie",
+                "Jeb Bush",
+                "Michael Bloomberg",
+                "Tim Kaine",
+                "John Kerry"
             ]
         ),
         // 29
@@ -386,7 +817,24 @@ struct USCISData {
             possibleWrongAnswers: [
                 "Kamala Harris",
                 "Mike Pence",
-                "Nikki Haley"
+                "Joe Biden",
+                "Nancy Pelosi",
+                "Chuck Schumer",
+                "Mitt Romney",
+                "Bernie Sanders",
+                "Elizabeth Warren",
+                "Ted Cruz",
+                "Marco Rubio",
+                "Mike Pompeo",
+                "Nikki Haley",
+                "Tim Scott",
+                "Tom Cotton",
+                "Josh Hawley",
+                "Kristi Noem",
+                "Ron DeSantis",
+                "Gavin Newsom",
+                "Pete Buttigieg",
+                "Alexandria Ocasio-Cortez"
             ]
         ),
         // 30
@@ -396,9 +844,26 @@ struct USCISData {
                 "The Vice President"
             ],
             possibleWrongAnswers: [
-                "The Speaker of the House",
-                "The Secretary of State",
-                "The Chief Justice"
+                "Secretary of State",
+                "Speaker of the House",
+                "Attorney General",
+                "Chief Justice",
+                "Secretary of Defense",
+                "Senate Majority Leader",
+                "Governor of the largest state",
+                "Secretary of the Treasury",
+                "First Lady",
+                "President Pro Tempore",
+                "Chairman of Joint Chiefs",
+                "Secretary of Education",
+                "Secretary of Homeland Security",
+                "Director of CIA",
+                "Director of FBI",
+                "Secretary of Health and Human Services",
+                "National Security Advisor",
+                "Ambassador to the UN",
+                "Secretary of Commerce",
+                "Secretary of Labor"
             ]
         ),
         // 31
@@ -408,9 +873,26 @@ struct USCISData {
                 "The Speaker of the House"
             ],
             possibleWrongAnswers: [
-                "The Senate Majority Leader",
-                "The Secretary of Defense",
-                "The Attorney General"
+                "Secretary of State",
+                "Attorney General",
+                "Chief Justice",
+                "Secretary of Defense",
+                "Senate Majority Leader",
+                "Governor of the largest state",
+                "Secretary of the Treasury",
+                "First Lady",
+                "Chairman of Joint Chiefs",
+                "Secretary of Education",
+                "Secretary of Homeland Security",
+                "Director of CIA",
+                "Director of FBI",
+                "Secretary of Health and Human Services",
+                "National Security Advisor",
+                "Ambassador to the UN",
+                "Secretary of Commerce",
+                "Secretary of Labor",
+                "Senate Minority Leader",
+                "Speaker Pro Tempore"
             ]
         ),
         // 32
@@ -420,9 +902,26 @@ struct USCISData {
                 "The President"
             ],
             possibleWrongAnswers: [
-                "The Secretary of Defense",
-                "The Joint Chiefs of Staff",
-                "The Vice President"
+                "Vice President",
+                "Secretary of Defense",
+                "Chairman of the Joint Chiefs",
+                "Secretary of State",
+                "Attorney General",
+                "Chief Justice",
+                "Speaker of the House",
+                "National Security Advisor",
+                "Secretary of the Army",
+                "Secretary of the Navy",
+                "Secretary of the Air Force",
+                "Governor of the largest state",
+                "Secretary of Homeland Security",
+                "Director of National Intelligence",
+                "Senate Majority Leader",
+                "President Pro Tempore",
+                "Ambassador to the UN",
+                "Secretary of Veterans Affairs",
+                "Director of CIA",
+                "Director of FBI"
             ]
         ),
         // 33
@@ -432,9 +931,26 @@ struct USCISData {
                 "The President"
             ],
             possibleWrongAnswers: [
-                "The Speaker of the House",
-                "The Senate Majority Leader",
-                "The Chief Justice"
+                "Vice President",
+                "Chief Justice",
+                "Speaker of the House",
+                "Senate Majority Leader",
+                "Attorney General",
+                "Secretary of State",
+                "Secretary of Defense",
+                "Governors",
+                "Congress",
+                "President Pro Tempore",
+                "Chairman of the Joint Chiefs",
+                "Supreme Court Justices",
+                "Secretary of Treasury",
+                "Secretary of Education",
+                "Secretary of Commerce",
+                "Secretary of Labor",
+                "Director of FBI",
+                "Director of CIA",
+                "National Security Advisor",
+                "Ambassador to the UN"
             ]
         ),
         // 34
@@ -444,9 +960,26 @@ struct USCISData {
                 "The President"
             ],
             possibleWrongAnswers: [
+                "Vice President",
+                "Speaker of the House",
+                "Chief Justice",
+                "Attorney General",
+                "Secretary of State",
+                "Senate Majority Leader",
+                "Governors",
+                "Supreme Court Justices",
+                "Secretary of Defense",
                 "Congress",
-                "The Supreme Court",
-                "The Vice President"
+                "President Pro Tempore",
+                "Chairman of the Joint Chiefs",
+                "Secretary of Treasury",
+                "Secretary of Commerce",
+                "Secretary of Education",
+                "Secretary of Labor",
+                "Director of FBI",
+                "National Security Advisor",
+                "Ambassador to the UN",
+                "Secretary of Homeland Security"
             ]
         ),
         // 35
@@ -456,9 +989,26 @@ struct USCISData {
                 "Advises the President"
             ],
             possibleWrongAnswers: [
-                "Makes laws",
-                "Commands the military",
-                "Interprets the Constitution"
+                "Prints currency",
+                "Elects the President",
+                "Runs elections",
+                "Declares war",
+                "Signs treaties",
+                "Appoints judges",
+                "Writes laws",
+                "Sets taxes",
+                "Manages state governments",
+                "Oversees elections",
+                "Approves constitutional amendments",
+                "Issues driver's licenses",
+                "Controls Congress",
+                "Leads the Supreme Court",
+                "Manages public education",
+                "Creates national holidays",
+                "Sets interest rates",
+                "Selects Senators",
+                "Runs political campaigns",
+                "Manages foreign governments"
             ]
         ),
         // 36
@@ -498,9 +1048,26 @@ struct USCISData {
                 "Decides if a law goes against the Constitution"
             ],
             possibleWrongAnswers: [
-                "Makes laws",
-                "Enforces laws",
-                "Writes the Constitution"
+                "Writes federal laws",
+                "Executes national defense",
+                "Manages state governments",
+                "Appoints ambassadors",
+                "Declares war",
+                "Creates taxes",
+                "Runs elections",
+                "Signs treaties",
+                "Prints money",
+                "Approves budgets",
+                "Issues driver's licenses",
+                "Leads foreign policy",
+                "Oversees education",
+                "Elects the president",
+                "Manages public health",
+                "Enforces federal laws",
+                "Runs federal agencies",
+                "Sets interest rates",
+                "Approves constitutional amendments",
+                "Creates national parks"
             ]
         ),
         // 38
@@ -510,9 +1077,26 @@ struct USCISData {
                 "The Supreme Court"
             ],
             possibleWrongAnswers: [
-                "The Federal Appeals Court",
-                "The District Court",
-                "The State Supreme Court"
+                "Court of Appeals",
+                "Federal Court",
+                "District Court",
+                "Court of Federal Claims",
+                "Tax Court",
+                "Military Court",
+                "State Supreme Court",
+                "Circuit Court",
+                "Superior Court",
+                "Court of International Trade",
+                "Court of Veterans Appeals",
+                "Bankruptcy Court",
+                "Court of Criminal Appeals",
+                "Court of Civil Appeals",
+                "Probate Court",
+                "Juvenile Court",
+                "Family Court",
+                "Immigration Court",
+                "Court of Public Opinion",
+                "Court of Common Pleas"
             ]
         ),
         // 39
@@ -522,21 +1106,54 @@ struct USCISData {
                 "9"
             ],
             possibleWrongAnswers: [
+                "3",
+                "5",
                 "7",
                 "8",
-                "10"
+                "10",
+                "11",
+                "12",
+                "13",
+                "15",
+                "17",
+                "19",
+                "20",
+                "21",
+                "23",
+                "25",
+                "27",
+                "30",
+                "35",
+                "40",
+                "50"
             ]
         ),
         // 40
         USCISQuestion(
             text: "Who is the Chief Justice of the United States now?",
             possibleCorrectAnswers: [
-                "John Roberts"
+                "John G. Roberts, Jr."
             ],
             possibleWrongAnswers: [
                 "Clarence Thomas",
+                "Samuel Alito",
+                "Neil Gorsuch",
+                "Brett Kavanaugh",
+                "Amy Coney Barrett",
                 "Sonia Sotomayor",
-                "Brett Kavanaugh"
+                "Elena Kagan",
+                "Stephen Breyer",
+                "Ruth Bader Ginsburg",
+                "Anthony Kennedy",
+                "David Souter",
+                "John Paul Stevens",
+                "William Rehnquist",
+                "Antonin Scalia",
+                "Thurgood Marshall",
+                "William Brennan",
+                "Warren Burger",
+                "Earl Warren",
+                "Oliver Wendell Holmes"
             ]
         ),
         // 41
@@ -549,9 +1166,26 @@ struct USCISData {
                 "To make treaties"
             ],
             possibleWrongAnswers: [
-                "To build roads",
-                "To set taxes for states",
-                "To run schools"
+                "To issue driver's licenses",
+                "To set local speed limits",
+                "To regulate local zoning",
+                "To establish schools",
+                "To manage local police departments",
+                "To organize local elections",
+                "To issue marriage licenses",
+                "To maintain local roads",
+                "To run city councils",
+                "To set property taxes",
+                "To manage state parks",
+                "To issue birth certificates",
+                "To manage local schools",
+                "To provide trash collection",
+                "To oversee public transportation",
+                "To regulate local businesses",
+                "To manage city budgets",
+                "To issue driver's licenses",
+                "To run county elections",
+                "To establish state holidays"
             ]
         ),
         // 42
@@ -565,9 +1199,26 @@ struct USCISData {
                 "Approve zoning and land use"
             ],
             possibleWrongAnswers: [
-                "Coin money",
                 "Declare war",
-                "Sign treaties"
+                "Print money",
+                "Sign treaties",
+                "Create a military",
+                "Regulate international trade",
+                "Manage foreign policy",
+                "Appoint ambassadors",
+                "Establish post offices",
+                "Issue passports",
+                "Control national borders",
+                "Set federal tax rates",
+                "Approve Supreme Court justices",
+                "Regulate interstate commerce",
+                "Establish federal courts",
+                "Set tariffs",
+                "Issue currency",
+                "Conduct foreign diplomacy",
+                "Grant citizenship",
+                "Form alliances",
+                "Maintain national defense"
             ]
         ),
         // 43
@@ -601,9 +1252,26 @@ struct USCISData {
                 "Democratic and Republican"
             ],
             possibleWrongAnswers: [
+                "Federalist and Anti-Federalist",
                 "Liberal and Conservative",
-                "Federalist and Whig",
-                "Green and Libertarian"
+                "Green and Libertarian",
+                "Whig and Tory",
+                "Labor and Conservative",
+                "National and Progressive",
+                "Socialist and Democratic",
+                "Republican and Progressive",
+                "Democratic and Populist",
+                "Independent and Green",
+                "Libertarian and Federalist",
+                "Patriot and Loyalist",
+                "Union and Confederate",
+                "Reform and Independent",
+                "People's and Unity",
+                "Moderate and Radical",
+                "Freedom and Justice",
+                "Liberty and Equality",
+                "Constitution and Reform",
+                "Progressive and Populist"
             ]
         ),
         // 46
@@ -615,7 +1283,24 @@ struct USCISData {
             possibleWrongAnswers: [
                 "Democratic",
                 "Independent",
-                "Libertarian"
+                "Libertarian",
+                "Green",
+                "Constitution",
+                "Socialist",
+                "Progressive",
+                "Tea",
+                "Federalist",
+                "Whig",
+                "Labor",
+                "Populist",
+                "Reform",
+                "Prohibition",
+                "Natural Law",
+                "Patriot",
+                "America First",
+                "Peace and Freedom",
+                "Citizens",
+                "Unity"
             ]
         ),
         // 47
@@ -625,9 +1310,27 @@ struct USCISData {
                 "Mike Johnson"
             ],
             possibleWrongAnswers: [
-                "Nancy Pelosi",
                 "Kevin McCarthy",
-                "Paul Ryan"
+                "Nancy Pelosi",
+                "Steny Hoyer",
+                "James Clyburn",
+                "Steve Scalise",
+                "Elise Stefanik",
+                "Jim Jordan",
+                "Adam Schiff",
+                "Hakeem Jeffries",
+                "Alexandria Ocasio-Cortez",
+                "Marjorie Taylor Greene",
+                "Ilhan Omar",
+                "Matt Gaetz",
+                "Lauren Boebert",
+                "Maxine Waters",
+                "Jerry Nadler",
+                "Devin Nunes",
+                "Eric Swalwell",
+                "Paul Ryan",
+                "John Boehner",
+                "il Donaldo Trumpo"
             ]
         ),
         // 48
@@ -640,9 +1343,26 @@ struct USCISData {
                 "A male citizen of any race can vote"
             ],
             possibleWrongAnswers: [
-                "Only landowners can vote",
-                "Voting is mandatory for all citizens",
-                "Only white men can vote"
+                "Grants voting rights only to landowners",
+                "Requires a literacy test to vote",
+                "Allows only men to vote",
+                "Sets the voting age at 25",
+                "Requires military service to vote",
+                "Limits voting to property owners",
+                "Grants voting rights based on income",
+                "Requires a college degree to vote",
+                "Allows only natural-born citizens to vote",
+                "Requires citizenship for 20 years before voting",
+                "Bans voting for people without children",
+                "Limits voting to taxpayers",
+                "Grants voting rights to only married individuals",
+                "Allows only first-generation citizens to vote",
+                "Requires a voter ID in all states",
+                "Restricts voting to homeowners",
+                "Prevents voting by unemployed individuals",
+                "Allows only state governors to vote for President",
+                "Mandates a national language test for voting",
+                "Grants voting rights only to war veterans"
             ]
         ),
         // 49
@@ -653,10 +1373,26 @@ struct USCISData {
                 "Vote in a federal election"
             ],
             possibleWrongAnswers: [
-                "Pay taxes",
-                "Obey state laws",
-                "Attend school",
-                "Be employed"
+                "Paying taxes",
+                "Obeying traffic laws",
+                "Serving in the military",
+                "Attending school",
+                "Respecting others' opinions",
+                "Following state laws",
+                "Owning property",
+                "Applying for a driver's license",
+                "Using the postal service",
+                "Traveling with a U.S. passport",
+                "Voting in local elections",
+                "Running for governor",
+                "Serving as a police officer",
+                "Registering a business",
+                "Applying for Social Security benefits",
+                "Getting a marriage license",
+                "Applying for student loans",
+                "Serving on a school board",
+                "Buying health insurance",
+                "Applying for welfare benefits"
             ]
         ),
         // 50
@@ -667,11 +1403,26 @@ struct USCISData {
                 "Right to run for federal office"
             ],
             possibleWrongAnswers: [
-                "Right to education",
+                "Right to free speech",
+                "Right to bear arms",
+                "Right to a fair trial",
+                "Right to freedom of religion",
+                "Right to protest",
+                "Right to public education",
+                "Right to own property",
                 "Right to healthcare",
-                "Right to housing",
-                "Right to vote",
-                "Right to a job"
+                "Right to travel freely",
+                "Right to work",
+                "Right to access public roads",
+                "Right to drive a car",
+                "Right to receive Social Security benefits",
+                "Right to start a business",
+                "Right to run for mayor",
+                "Right to rent a home",
+                "Right to apply for a visa",
+                "Right to free legal counsel",
+                "Right to attend public universities",
+                "Right to emergency medical care"
             ]
         ),
         // 51
@@ -686,15 +1437,26 @@ struct USCISData {
                 "The right to bear arms"
             ],
             possibleWrongAnswers: [
-                "Right to vote",
-                "Right to a job",
-                "Right to education",
-                "Right to healthcare",
-                "Right to housing",
-                "Right to social security",
-                "Right to time off",
-                "Right to a beer",
-                "Right of way"
+                "Right to vote in federal elections",
+                "Right to hold a U.S. passport",
+                "Right to run for President",
+                "Right to receive Social Security benefits",
+                "Right to free college education",
+                "Right to own a business",
+                "Right to hold dual citizenship",
+                "Right to free housing",
+                "Right to government-funded healthcare",
+                "Right to an automatic work permit",
+                "Right to receive welfare benefits",
+                "Right to serve in Congress",
+                "Right to own any type of firearm",
+                "Right to drive without a license",
+                "Right to a high-paying job",
+                "Right to unrestricted immigration",
+                "Right to a jury of only U.S. citizens",
+                "Right to free land from the government",
+                "Right to an unlimited stay in the U.S.",
+                "Right to automatic citizenship after five years"
             ]
         ),
         // 52
@@ -831,14 +1593,26 @@ struct USCISData {
                 "people from Africa"
             ],
             possibleWrongAnswers: [
-                "Various Europeans",
-                "Asians",
                 "Native Americans",
-                "Irish prisoners of war",
-                "Europeans",
-                "Scottish prisoners of war",
-                "Asians",
-                "Middle Easterners"
+                "Chinese immigrants",
+                "Irish immigrants",
+                "Italian immigrants",
+                "Mexican laborers",
+                "Scottish prisoners",
+                "German settlers",
+                "French colonists",
+                "Polish workers",
+                "Japanese farmers",
+                "Greek merchants",
+                "Portuguese sailors",
+                "Russian exiles",
+                "Spanish missionaries",
+                "Indian laborers",
+                "Middle Eastern traders",
+                "Korean refugees",
+                "Jewish immigrants",
+                "Filipino workers",
+                "Canadian fur traders"
             ]
         ),
         // 61
@@ -1215,7 +1989,7 @@ struct USCISData {
         USCISQuestion(
             text: "What major event happened on September 11, 2001, in the United States?",
             possibleCorrectAnswers: [
-                "Terrorists attacked the United States."
+                "Terrorists attacked the United States"
             ],
             possibleWrongAnswers: [
                 "The Iraq War began",
@@ -1261,7 +2035,17 @@ struct USCISData {
                 "Yanusee",
                 "Mirakota",
                 "Sowendi",
-                "Valthira"
+                "Valthira",
+                "Aztec",
+                "Inca",
+                "Maya",
+                "Quechua",
+                "Arawak",
+                "Zapotec",
+                "Toltec",
+                "Guarani",
+                "Taino",
+                "Olmec"
             ]
         ),
         // 88
@@ -1275,7 +2059,14 @@ struct USCISData {
                 "Ohio River",
                 "Colorado River",
                 "Hudson River",
-                "Susquahita River"
+                "Susquahita River",
+                "Rio Grande",
+                "Arkansas River",
+                "Columbia River",
+                "Yukon River",
+                "Snake River",
+                "Red River",
+                "Tennessee River"
             ]
         ),
         // 89
@@ -1430,7 +2221,8 @@ struct USCISData {
                 "Because it was a lucky number",
                 "Because it was a design by Benjamin Franklin",
                 "Because it was a design by George Washington",
-                "Because it represents the 13 tribes of man"
+                "Because it represents the 13 tribes of man",
+                "Because it is Taylor Swift's favorite number"
             ]
         ),
         // 97
