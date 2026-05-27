@@ -24,18 +24,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FDAD0DDE2D74900A008ADF7D /* citizenship-quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "citizenship-quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDAD0DEE2D74900C008ADF7D /* citizenship-quizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "citizenship-quizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDAD0DF82D74900C008ADF7D /* citizenship-quizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "citizenship-quizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDAD0DDE2D74900A008ADF7D /* Citizenship Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Citizenship Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDAD0DEE2D74900C008ADF7D /* Citizenship QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Citizenship QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDAD0DF82D74900C008ADF7D /* Citizenship QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Citizenship QuizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		FD599FA22D94A5A000587888 /* Exceptions for "citizenship-quiz" folder in "citizenship-quiz" target */ = {
+		FD599FA22D94A5A000587888 /* Exceptions for "citizenship-quiz" folder in "Citizenship Quiz" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = FDAD0DDD2D74900A008ADF7D /* citizenship-quiz */;
+			target = FDAD0DDD2D74900A008ADF7D /* Citizenship Quiz */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -43,7 +43,7 @@
 		FDAD0DE02D74900A008ADF7D /* citizenship-quiz */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				FD599FA22D94A5A000587888 /* Exceptions for "citizenship-quiz" folder in "citizenship-quiz" target */,
+				FD599FA22D94A5A000587888 /* Exceptions for "citizenship-quiz" folder in "Citizenship Quiz" target */,
 			);
 			path = "citizenship-quiz";
 			sourceTree = "<group>";
@@ -98,9 +98,9 @@
 		FDAD0DDF2D74900A008ADF7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FDAD0DDE2D74900A008ADF7D /* citizenship-quiz.app */,
-				FDAD0DEE2D74900C008ADF7D /* citizenship-quizTests.xctest */,
-				FDAD0DF82D74900C008ADF7D /* citizenship-quizUITests.xctest */,
+				FDAD0DDE2D74900A008ADF7D /* Citizenship Quiz.app */,
+				FDAD0DEE2D74900C008ADF7D /* Citizenship QuizTests.xctest */,
+				FDAD0DF82D74900C008ADF7D /* Citizenship QuizUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FDAD0DDD2D74900A008ADF7D /* citizenship-quiz */ = {
+		FDAD0DDD2D74900A008ADF7D /* Citizenship Quiz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDAD0E022D74900C008ADF7D /* Build configuration list for PBXNativeTarget "citizenship-quiz" */;
+			buildConfigurationList = FDAD0E022D74900C008ADF7D /* Build configuration list for PBXNativeTarget "Citizenship Quiz" */;
 			buildPhases = (
 				FDAD0DDA2D74900A008ADF7D /* Sources */,
 				FDAD0DDB2D74900A008ADF7D /* Frameworks */,
@@ -123,16 +123,16 @@
 			fileSystemSynchronizedGroups = (
 				FDAD0DE02D74900A008ADF7D /* citizenship-quiz */,
 			);
-			name = "citizenship-quiz";
+			name = "Citizenship Quiz";
 			packageProductDependencies = (
 			);
 			productName = "citizenship-quiz";
-			productReference = FDAD0DDE2D74900A008ADF7D /* citizenship-quiz.app */;
+			productReference = FDAD0DDE2D74900A008ADF7D /* Citizenship Quiz.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FDAD0DED2D74900C008ADF7D /* citizenship-quizTests */ = {
+		FDAD0DED2D74900C008ADF7D /* Citizenship QuizTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDAD0E052D74900C008ADF7D /* Build configuration list for PBXNativeTarget "citizenship-quizTests" */;
+			buildConfigurationList = FDAD0E052D74900C008ADF7D /* Build configuration list for PBXNativeTarget "Citizenship QuizTests" */;
 			buildPhases = (
 				FDAD0DEA2D74900C008ADF7D /* Sources */,
 				FDAD0DEB2D74900C008ADF7D /* Frameworks */,
@@ -146,16 +146,16 @@
 			fileSystemSynchronizedGroups = (
 				FDAD0DF12D74900C008ADF7D /* citizenship-quizTests */,
 			);
-			name = "citizenship-quizTests";
+			name = "Citizenship QuizTests";
 			packageProductDependencies = (
 			);
 			productName = "citizenship-quizTests";
-			productReference = FDAD0DEE2D74900C008ADF7D /* citizenship-quizTests.xctest */;
+			productReference = FDAD0DEE2D74900C008ADF7D /* Citizenship QuizTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FDAD0DF72D74900C008ADF7D /* citizenship-quizUITests */ = {
+		FDAD0DF72D74900C008ADF7D /* Citizenship QuizUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDAD0E082D74900C008ADF7D /* Build configuration list for PBXNativeTarget "citizenship-quizUITests" */;
+			buildConfigurationList = FDAD0E082D74900C008ADF7D /* Build configuration list for PBXNativeTarget "Citizenship QuizUITests" */;
 			buildPhases = (
 				FDAD0DF42D74900C008ADF7D /* Sources */,
 				FDAD0DF52D74900C008ADF7D /* Frameworks */,
@@ -169,11 +169,11 @@
 			fileSystemSynchronizedGroups = (
 				FDAD0DFB2D74900C008ADF7D /* citizenship-quizUITests */,
 			);
-			name = "citizenship-quizUITests";
+			name = "Citizenship QuizUITests";
 			packageProductDependencies = (
 			);
 			productName = "citizenship-quizUITests";
-			productReference = FDAD0DF82D74900C008ADF7D /* citizenship-quizUITests.xctest */;
+			productReference = FDAD0DF82D74900C008ADF7D /* Citizenship QuizUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +184,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					FDAD0DDD2D74900A008ADF7D = {
 						CreatedOnToolsVersion = 16.2;
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FDAD0DD92D74900A008ADF7D /* Build configuration list for PBXProject "citizenship-quiz" */;
+			buildConfigurationList = FDAD0DD92D74900A008ADF7D /* Build configuration list for PBXProject "Citizenship Quiz" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -213,9 +213,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FDAD0DDD2D74900A008ADF7D /* citizenship-quiz */,
-				FDAD0DED2D74900C008ADF7D /* citizenship-quizTests */,
-				FDAD0DF72D74900C008ADF7D /* citizenship-quizUITests */,
+				FDAD0DDD2D74900A008ADF7D /* Citizenship Quiz */,
+				FDAD0DED2D74900C008ADF7D /* Citizenship QuizTests */,
+				FDAD0DF72D74900C008ADF7D /* Citizenship QuizUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,12 +271,12 @@
 /* Begin PBXTargetDependency section */
 		FDAD0DF02D74900C008ADF7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FDAD0DDD2D74900A008ADF7D /* citizenship-quiz */;
+			target = FDAD0DDD2D74900A008ADF7D /* Citizenship Quiz */;
 			targetProxy = FDAD0DEF2D74900C008ADF7D /* PBXContainerItemProxy */;
 		};
 		FDAD0DFA2D74900C008ADF7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FDAD0DDD2D74900A008ADF7D /* citizenship-quiz */;
+			target = FDAD0DDD2D74900A008ADF7D /* Citizenship Quiz */;
 			targetProxy = FDAD0DF92D74900C008ADF7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -317,6 +317,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5TE942STS9;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -343,6 +344,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -383,6 +385,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5TE942STS9;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -402,6 +405,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -414,13 +418,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "\"citizenship-quiz/Preview Content\"";
-				DEVELOPMENT_TEAM = 5TE942STS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "citizenship-quiz/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "citizenship-app";
+				INFOPLIST_KEY_CFBundleDisplayName = "Citizenship Quiz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -432,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willknow.citizenship-quiz.citizenship-quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -452,13 +455,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_ASSET_PATHS = "\"citizenship-quiz/Preview Content\"";
-				DEVELOPMENT_TEAM = 5TE942STS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "citizenship-quiz/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "citizenship-app";
+				INFOPLIST_KEY_CFBundleDisplayName = "Citizenship Quiz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,7 +472,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willknow.citizenship-quiz.citizenship-quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -488,8 +490,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5TE942STS9;
+				CURRENT_PROJECT_VERSION = 24;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -498,7 +499,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/citizenship-quiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/citizenship-quiz";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Citizenship Quiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Citizenship Quiz";
 			};
 			name = Debug;
 		};
@@ -507,8 +508,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5TE942STS9;
+				CURRENT_PROJECT_VERSION = 24;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -517,7 +517,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/citizenship-quiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/citizenship-quiz";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Citizenship Quiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Citizenship Quiz";
 			};
 			name = Release;
 		};
@@ -525,8 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5TE942STS9;
+				CURRENT_PROJECT_VERSION = 24;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willknow.citizenship-quiz.citizenship-quizUITests";
@@ -542,8 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5TE942STS9;
+				CURRENT_PROJECT_VERSION = 24;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willknow.citizenship-quiz.citizenship-quizUITests";
@@ -558,7 +556,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FDAD0DD92D74900A008ADF7D /* Build configuration list for PBXProject "citizenship-quiz" */ = {
+		FDAD0DD92D74900A008ADF7D /* Build configuration list for PBXProject "Citizenship Quiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDAD0E002D74900C008ADF7D /* Debug */,
@@ -567,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDAD0E022D74900C008ADF7D /* Build configuration list for PBXNativeTarget "citizenship-quiz" */ = {
+		FDAD0E022D74900C008ADF7D /* Build configuration list for PBXNativeTarget "Citizenship Quiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDAD0E032D74900C008ADF7D /* Debug */,
@@ -576,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDAD0E052D74900C008ADF7D /* Build configuration list for PBXNativeTarget "citizenship-quizTests" */ = {
+		FDAD0E052D74900C008ADF7D /* Build configuration list for PBXNativeTarget "Citizenship QuizTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDAD0E062D74900C008ADF7D /* Debug */,
@@ -585,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDAD0E082D74900C008ADF7D /* Build configuration list for PBXNativeTarget "citizenship-quizUITests" */ = {
+		FDAD0E082D74900C008ADF7D /* Build configuration list for PBXNativeTarget "Citizenship QuizUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDAD0E092D74900C008ADF7D /* Debug */,
