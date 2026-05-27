@@ -285,7 +285,7 @@ struct QuestionsData {
             wrongAnswers: [
                 "The Attorney General",
                 "The Senate Majority Leader",
-                "The Secretary of Defense"
+                "The Secretary of War"
             ]
         ),
         Question(
@@ -405,7 +405,7 @@ struct QuestionsData {
                 "California"
             ]
         ),
-        Question(
+        Question( 
             text: "What are the two major political parties in the United States?",
             correctAnswer: "Democratic and Republican",
             wrongAnswers: [

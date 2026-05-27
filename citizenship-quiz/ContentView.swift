@@ -2,20 +2,16 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var repFetcher = RepFetcher()
-    
-    // The final single-answer questions for the quiz
+
     @State private var finalQuestions: [Question] = []
-    
-    // Controls whether we show the quiz or the start screen
     @State private var showQuiz = false
-    
-    // ZIP code typed by the user
-    @State private var zipCode = ""
-    
-    // State variable to handle an invalid zip code error
     @State private var invalidZip = false
-    
-    // Full list of 50 states (for question #64 distractors)
+
+    // Persisted across launches
+    @AppStorage("savedZipCode") private var zipCode = ""
+
+    @State private var recentScores: [ScoreRecord] = []
+
     let all50States: [String] = [
         "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware",
         "Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky",
@@ -25,307 +21,291 @@ struct ContentView: View {
         "Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont",
         "Virginia","Washington","West Virginia","Wisconsin","Wyoming"
     ]
-    
-    // The original 13 states (for question #64)
+
     let original13: [String] = [
         "New Hampshire","Massachusetts","Rhode Island","Connecticut","New York","New Jersey",
         "Pennsylvania","Delaware","Maryland","Virginia","North Carolina","South Carolina","Georgia"
     ]
-    
-    // A small set of "fake" holidays for question #100 distractors
+
     let fakeHolidaysFor100: [String] = [
         "Valentine's Day","St. Patrick's Day","Easter","Halloween",
         "Mother's Day","Father's Day","April Fools' Day","Tax Day"
     ]
-    
+
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                if !showQuiz {
-                    // Start Screen
-                    VStack {
-                        Text("Please provide your zip code so that we may tailor the test to your specific region.")
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color.red, Color.blue]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .cornerRadius(8)
-                            .padding(.horizontal)
+        NavigationStack {
+            if showQuiz {
+                QuizView(
+                    fullQuestionPool: finalQuestions,
+                    onRestart: {
+                        showQuiz = false   // just go home; user taps Begin Quiz when ready
                     }
-                    
-                    Text("U.S. Citizenship Quiz")
-                        .font(.largeTitle)
-                    
-                    TextField("Enter your ZIP code", text: $zipCode)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .keyboardType(.numberPad)
-                    
-                    if repFetcher.isLoading {
-                        ProgressView("Loading data...")
-                    } else {
-                        Button("Begin Quiz") {
-                            repFetcher.fetchReps(zip: zipCode) {
-                                DispatchQueue.main.async {
-                                    if repFetcher.reps.isEmpty {
-                                        invalidZip = true
-                                    } else {
-                                        prepareQuestions()
-                                        showQuiz = true
-                                    }
-                                }
-                            }
-                        }
-                        .padding()
-                        .background(Color.blue.opacity(0.7))
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                    }
-                } else {
-                    // Quiz View
-                    QuizView(
-                        fullQuestionPool: finalQuestions,
-                        onRestart: {
-                            prepareQuestions() // Rebuild a fresh random set
-                            showQuiz = false
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                                showQuiz = true
-                            }
-                        }
-                    )
-                }
-            }
-            .padding()
-            .navigationTitle("Citizenship Quiz")
-            .navigationBarTitleDisplayMode(.inline)
-            .alert(isPresented: $invalidZip) {
-                Alert(
-                    title: Text("Invalid Zip Code"),
-                    message: Text("We couldn't retrieve data for that zip code. Please enter a valid zip code."),
-                    dismissButton: .default(Text("OK"))
                 )
+            } else {
+                homeScreen
             }
         }
     }
-    
-    // MARK: - Prepare Questions Function
-    
-    /// This function builds the finalQuestions array.
-    /// It transforms USCISData.all into a set of 10 randomized questions,
-    /// handling multi-answer questions (#36, #51, #55, #64, #100) separately,
-    /// and inserting placeholders for governor, senator, etc.
+
+    // MARK: - Home Screen
+
+    private var homeScreen: some View {
+        ScrollView {
+          VStack(spacing: 0) {
+            // Hero
+            VStack(spacing: 14) {
+                Image(systemName: "building.columns.fill")
+                    .font(.system(size: 72))
+                    .foregroundStyle(.blue)
+
+                VStack(spacing: 6) {
+                    Text("U.S. Citizenship Quiz")
+                        .font(.largeTitle.bold())
+                        .multilineTextAlignment(.center)
+
+                    Text("Prepare for your naturalization interview")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .padding(.top, 64)
+            .padding(.horizontal, 32)
+
+            // Summary tile (only shown after first quiz)
+            if !recentScores.isEmpty {
+                summaryTile
+                    .padding(.top, 32)
+            } else {
+                Spacer(minLength: 48)
+            }
+
+            Spacer(minLength: 32)
+
+            // ZIP entry card + button
+            VStack(spacing: 16) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Label("Your ZIP Code", systemImage: "location.fill")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+
+                    TextField("e.g. 10001", text: $zipCode)
+                        .keyboardType(.numberPad)
+                        .font(.title3.weight(.medium))
+                        .padding(12)
+                        .background(Color(.tertiarySystemBackground))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                    Text("Personalizes your governor, senators, and representative questions.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color(.secondarySystemBackground))
+                )
+
+                if repFetcher.isLoading {
+                    ProgressView("Looking up your representatives…")
+                        .padding(.vertical, 8)
+                } else {
+                    Button {
+                        beginQuiz()
+                    } label: {
+                        Text("Begin Quiz")
+                            .font(.title3.weight(.semibold))
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 14)
+                                    .fill(zipCode.count >= 5 ? Color.blue : Color(.systemGray4))
+                            )
+                            .foregroundStyle(.white)
+                    }
+                    .disabled(zipCode.count < 5)
+                    .animation(.easeInOut(duration: 0.2), value: zipCode.count >= 5)
+
+                    NavigationLink {
+                        FlashcardView(repFetcher: repFetcher)
+                    } label: {
+                        Label("Study Flashcards", systemImage: "rectangle.stack")
+                            .font(.body.weight(.semibold))
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 14)
+                                    .strokeBorder(Color.blue, lineWidth: 1.5)
+                            )
+                            .foregroundStyle(.blue)
+                    }
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.bottom, 52)
+          } // end outer VStack
+        } // end ScrollView
+        .navigationBarHidden(true)
+        .onAppear { recentScores = ScoreHistory.load() }
+        .alert("Invalid ZIP Code", isPresented: $invalidZip) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("We couldn't find representatives for that ZIP code. Please double-check and try again.")
+        }
+    }
+
+    // MARK: - Summary Tile
+
+    private var summaryTile: some View {
+        let attempted = recentScores.count
+        let passed    = recentScores.filter { $0.passed }.count
+
+        return HStack(spacing: 0) {
+            statColumn(value: attempted, label: "Attempted")
+
+            Divider()
+                .frame(height: 44)
+
+            statColumn(value: passed, label: "Passed")
+        }
+        .padding(.vertical, 20)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.secondarySystemBackground))
+        )
+        .padding(.horizontal, 24)
+    }
+
+    private func statColumn(value: Int, label: String) -> some View {
+        VStack(spacing: 4) {
+            Text("\(value)")
+                .font(.system(size: 34, weight: .bold, design: .rounded))
+            Text(label)
+                .font(.caption.weight(.medium))
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    // MARK: - Begin Quiz
+
+    private func beginQuiz() {
+        repFetcher.fetchReps(zip: zipCode) {
+            DispatchQueue.main.async {
+                if repFetcher.reps.isEmpty {
+                    invalidZip = true
+                } else {
+                    prepareQuestions()
+                    showQuiz = true
+                }
+            }
+        }
+    }
+
+    // MARK: - Prepare Questions
+
     func prepareQuestions() {
         var transformed: [Question] = []
-        
-        // Convert each USCISQuestion into a single-answer Question,
-        // skipping multi-answer questions for special handling.
+
         for original in USCISData.all {
             if original.text.contains("What are two Cabinet-level positions?") { continue }
             if original.text.contains("What are two rights of everyone living in the United States?") { continue }
             if original.text.contains("What are two ways that Americans can participate in their democracy?") { continue }
             if original.text.contains("There were 13 original states. Name three.") { continue }
             if original.text.contains("Name two national U.S. holidays.") { continue }
-            
+
             guard let randomCorrect = original.possibleCorrectAnswers.randomElement() else { continue }
-            
-            let wrongs = original.possibleWrongAnswers.shuffled()
-            let threeWrongs = Array(wrongs.prefix(3))
-            
-            let newQ = Question(
-                text: original.text,
-                correctAnswer: randomCorrect,
-                wrongAnswers: threeWrongs
-            )
-            transformed.append(newQ)
+            let threeWrongs = Array(original.possibleWrongAnswers.shuffled().prefix(3))
+            transformed.append(Question(text: original.text, correctAnswer: randomCorrect, wrongAnswers: threeWrongs))
         }
-        
-        // Special handling for multi-answer questions:
-        
-        // Question #36: Two Cabinet-level positions
-        if let idx36 = USCISData.all.firstIndex(where: { $0.text.contains("What are two Cabinet-level positions?") }) {
-            let specialQ = USCISData.all[idx36]
-            let correctPair = randomPair(from: specialQ.possibleCorrectAnswers)
-            let correctString = correctPair.joined(separator: ", ")
-            let distractorPairs = buildDistractorPairs(source: FakeCabinetPositions.all, count: 3)
-            let question36 = Question(
-                text: specialQ.text,
-                correctAnswer: correctString,
-                wrongAnswers: distractorPairs
-            )
-            transformed.append(question36)
+
+        // Question #36
+        if let q = USCISData.all.first(where: { $0.text.contains("What are two Cabinet-level positions?") }) {
+            let correct = randomPair(from: q.possibleCorrectAnswers).joined(separator: ", ")
+            transformed.append(Question(text: q.text, correctAnswer: correct,
+                                        wrongAnswers: buildDistractorPairs(source: FakeCabinetPositions.all, count: 3)))
         }
-        
-        // Question #51: Two rights of everyone living in the United States
-        if let idx51 = USCISData.all.firstIndex(where: { $0.text.contains("What are two rights of everyone living in the United States?") }) {
-            let specialQ = USCISData.all[idx51]
-            let correctPair = randomPair(from: specialQ.possibleCorrectAnswers)
-            let correctString = correctPair.joined(separator: ", ")
-            let distractorPairs = buildDistractorPairs(source: specialQ.possibleWrongAnswers, count: 3)
-            let question51 = Question(
-                text: specialQ.text,
-                correctAnswer: correctString,
-                wrongAnswers: distractorPairs
-            )
-            transformed.append(question51)
+
+        // Question #51
+        if let q = USCISData.all.first(where: { $0.text.contains("What are two rights of everyone living in the United States?") }) {
+            let correct = randomPair(from: q.possibleCorrectAnswers).joined(separator: ", ")
+            transformed.append(Question(text: q.text, correctAnswer: correct,
+                                        wrongAnswers: buildDistractorPairs(source: q.possibleWrongAnswers, count: 3)))
         }
-        
-        // Question #55: Two ways that Americans can participate in their democracy
-        if let idx55 = USCISData.all.firstIndex(where: { $0.text.contains("What are two ways that Americans can participate in their democracy?") }) {
-            let specialQ = USCISData.all[idx55]
-            let correctPair = randomPair(from: specialQ.possibleCorrectAnswers)
-            let correctString = correctPair.joined(separator: ", ")
-            let distractorPairs = buildDistractorPairs(source: specialQ.possibleWrongAnswers, count: 3)
-            let question55 = Question(
-                text: specialQ.text,
-                correctAnswer: correctString,
-                wrongAnswers: distractorPairs
-            )
-            transformed.append(question55)
+
+        // Question #55
+        if let q = USCISData.all.first(where: { $0.text.contains("What are two ways that Americans can participate in their democracy?") }) {
+            let correct = randomPair(from: q.possibleCorrectAnswers).joined(separator: ", ")
+            transformed.append(Question(text: q.text, correctAnswer: correct,
+                                        wrongAnswers: buildDistractorPairs(source: q.possibleWrongAnswers, count: 3)))
         }
-        
-        // Question #64: Name three original states
-        if let idx64 = USCISData.all.firstIndex(where: { $0.text.contains("There were 13 original states. Name three.") }) {
-            let specialQ = USCISData.all[idx64]
-            let correctTriple = randomTriple(from: specialQ.possibleCorrectAnswers)
-            let correctString = correctTriple.joined(separator: ", ")
+
+        // Question #64
+        if let q = USCISData.all.first(where: { $0.text.contains("There were 13 original states. Name three.") }) {
+            let correct = randomTriple(from: q.possibleCorrectAnswers).joined(separator: ", ")
             let otherStates = all50States.filter { !original13.contains($0) }
-            let distractorTriples = buildDistractorTriples(source: otherStates, count: 3)
-            let question64 = Question(
-                text: specialQ.text,
-                correctAnswer: correctString,
-                wrongAnswers: distractorTriples
-            )
-            transformed.append(question64)
+            transformed.append(Question(text: q.text, correctAnswer: correct,
+                                        wrongAnswers: buildDistractorTriples(source: otherStates, count: 3)))
         }
-        
-        // Question #100: Name two national U.S. holidays
-        if let idx100 = USCISData.all.firstIndex(where: { $0.text.contains("Name two national U.S. holidays.") }) {
-            let specialQ = USCISData.all[idx100]
-            let correctPair = randomPair(from: specialQ.possibleCorrectAnswers)
-            let correctString = correctPair.joined(separator: ", ")
-            let distractorPairs = buildDistractorPairs(source: fakeHolidaysFor100, count: 3)
-            let question100 = Question(
-                text: specialQ.text,
-                correctAnswer: correctString,
-                wrongAnswers: distractorPairs
-            )
-            transformed.append(question100)
+
+        // Question #100
+        if let q = USCISData.all.first(where: { $0.text.contains("Name two national U.S. holidays.") }) {
+            let correct = randomPair(from: q.possibleCorrectAnswers).joined(separator: ", ")
+            transformed.append(Question(text: q.text, correctAnswer: correct,
+                                        wrongAnswers: buildDistractorPairs(source: fakeHolidaysFor100, count: 3)))
         }
-        
-        // Insert placeholders using data from repFetcher (if available)
+
+        // Personalize state-specific questions
         if let userState = repFetcher.reps.first?.state {
-            // GOVERNOR: Use CurrentGovernors
             if let gov = CurrentGovernors.governors[userState],
-               let idxGov = transformed.firstIndex(where: { $0.text.contains("Who is the Governor of your state now?") }) {
-                let oldQ = transformed[idxGov]
-                let dictionaryWithoutUser = CurrentGovernors.governors.filter { $0.key != userState }
-                let randomThree = Array(dictionaryWithoutUser.values.shuffled().prefix(3))
-                let updatedQ = Question(
-                    text: oldQ.text,
-                    correctAnswer: gov,
-                    wrongAnswers: randomThree
-                )
-                transformed[idxGov] = updatedQ
+               let idx = transformed.firstIndex(where: { $0.text.contains("Who is the Governor of your state now?") }) {
+                let wrongs = Array(CurrentGovernors.governors.filter { $0.key != userState }.values.shuffled().prefix(3))
+                transformed[idx] = Question(text: transformed[idx].text, correctAnswer: gov, wrongAnswers: wrongs)
             }
-            
-            // CAPITAL: Use StateCapitals
-            if let realCapital = StateCapitals.capitals[userState],
-               let idxCap = transformed.firstIndex(where: { $0.text.contains("What is the capital of your state?") }) {
-                let oldQ = transformed[idxCap]
-                let dictionaryWithoutUser = StateCapitals.capitals.filter { $0.key != userState }
-                let randomThree = Array(dictionaryWithoutUser.values.shuffled().prefix(3))
-                let updatedQ = Question(
-                    text: oldQ.text,
-                    correctAnswer: realCapital,
-                    wrongAnswers: randomThree
-                )
-                transformed[idxCap] = updatedQ
+            if let capital = StateCapitals.capitals[userState],
+               let idx = transformed.firstIndex(where: { $0.text.contains("What is the capital of your state?") }) {
+                let wrongs = Array(StateCapitals.capitals.filter { $0.key != userState }.values.shuffled().prefix(3))
+                transformed[idx] = Question(text: transformed[idx].text, correctAnswer: capital, wrongAnswers: wrongs)
             }
         }
-        
-        // SENATOR: Use AllSenators, excluding the actual senator
-        if let senatorRep = repFetcher.reps.first(where: { $0.area == "US Senate" }) {
-            if let idxSen = transformed.firstIndex(where: { $0.text.contains("Who is one of your state’s U.S. Senators now?") }) {
-                let oldQ = transformed[idxSen]
-                let senatorName = senatorRep.name
-                let senatorPool = AllSenators.all.filter { $0 != senatorName }
-                let randomThree = Array(senatorPool.shuffled().prefix(3))
-                let updatedQ = Question(
-                    text: oldQ.text,
-                    correctAnswer: senatorName,
-                    wrongAnswers: randomThree
-                )
-                transformed[idxSen] = updatedQ
-            }
+
+        if let senator = repFetcher.reps.first(where: { $0.area == "US Senate" }),
+           let idx = transformed.firstIndex(where: { $0.text.contains("Who is one of your state's U.S. Senators now?") }) {
+            let wrongs = Array(AllSenators.all.filter { $0 != senator.name }.shuffled().prefix(3))
+            transformed[idx] = Question(text: transformed[idx].text, correctAnswer: senator.name, wrongAnswers: wrongs)
         }
-        
-        // HOUSE Rep: Use FakeRepresentatives for distractors
-        if let houseRep = repFetcher.reps.first(where: { $0.area == "US House" }) {
-            if let idxHouse = transformed.firstIndex(where: { $0.text.contains("Name your U.S. Representative") }) {
-                let oldQ = transformed[idxHouse]
-                let randomFake = Array(FakeRepresentatives.all.shuffled().prefix(3))
-                let updatedQ = Question(
-                    text: oldQ.text,
-                    correctAnswer: houseRep.name,
-                    wrongAnswers: randomFake
-                )
-                transformed[idxHouse] = updatedQ
-            }
+
+        if let rep = repFetcher.reps.first(where: { $0.area == "US House" }),
+           let idx = transformed.firstIndex(where: { $0.text.contains("Name your U.S. Representative") }) {
+            let wrongs = Array(FakeRepresentatives.all.shuffled().prefix(3))
+            transformed[idx] = Question(text: transformed[idx].text, correctAnswer: rep.name, wrongAnswers: wrongs)
         }
-        
-        // Thoroughly shuffle and pick 10 random questions
+
         transformed.shuffle()
-        transformed.shuffle()
-        let allIndices = (0..<transformed.count).shuffled()
-        let randomTenIndices = allIndices.prefix(10)
-        var chosenTen = randomTenIndices.map { transformed[$0] }
-        chosenTen.shuffle()
-        
-        finalQuestions = chosenTen
+        finalQuestions = Array(transformed.shuffled().prefix(10))
     }
-    
-    // MARK: - Helper Functions
-    
-    /// Returns a random triple (3 distinct elements) from an array of strings.
-    func randomTriple(from array: [String]) -> [String] {
-        let shuffled = array.shuffled()
-        return Array(shuffled.prefix(3))
-    }
-    
-    /// Returns a random pair (2 distinct elements) from an array of strings.
-    func randomPair(from array: [String]) -> [String] {
-        let shuffled = array.shuffled()
-        return Array(shuffled.prefix(2))
-    }
-    
-    /// Builds a given number (count) of distractor triples from a source array.
+
+    // MARK: - Helpers
+
+    func randomTriple(from array: [String]) -> [String] { Array(array.shuffled().prefix(3)) }
+    func randomPair(from array: [String]) -> [String]   { Array(array.shuffled().prefix(2)) }
+
     func buildDistractorTriples(source: [String], count: Int) -> [String] {
-        var results: [String] = []
-        var pool = source.shuffled()
+        var pool = source.shuffled(); var results: [String] = []
         for _ in 0..<count {
-            if pool.count < 3 { break }
-            let triple = Array(pool.prefix(3))
+            guard pool.count >= 3 else { break }
+            results.append(Array(pool.prefix(3)).joined(separator: ", "))
             pool.removeFirst(3)
-            results.append(triple.joined(separator: ", "))
         }
         return results
     }
-    
-    /// Builds a given number (count) of distractor pairs from a source array.
+
     func buildDistractorPairs(source: [String], count: Int) -> [String] {
-        var results: [String] = []
-        var pool = source.shuffled()
+        var pool = source.shuffled(); var results: [String] = []
         for _ in 0..<count {
-            if pool.count < 2 { break }
-            let pair = Array(pool.prefix(2))
+            guard pool.count >= 2 else { break }
+            results.append(Array(pool.prefix(2)).joined(separator: ", "))
             pool.removeFirst(2)
-            results.append(pair.joined(separator: ", "))
         }
         return results
     }
